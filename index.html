@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+   
+     section.module h2 {
+            color: #b95026;
+            font-family: "Roboto Slab", serif;
+            font-size: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px green;
+        }
+        
+        section.module.content.parallax {
+            height: 400px;
+            padding: 40px 0;
+            background-image: url(img/parallax1.jpg);
+        }
+        
+        section.module.parallax {
+            padding: 200px 0;
+            background-position: 0 0;
+        }
+        
+        section.module.parallax h1 {
+            color: #1e1e1e;
+            font-size: 48px;
+            line-height: 1;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px white;
+        }
+        
+        section.module.parallax-1 {
+            background-image: url(img/parallax2.jpg);
+        }
+        
+        section.module.parallax-2 {
+            background-image: url(img/parallax2.jpg);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <section class="module parallax parallax-1">
+        <h1>Parallax</h1></section>
+        <section class="module content parallax">
+            <h2>Content</h2> </section>
+        <section class="module parallax parallax-2">
+            <h1>Parallax</h1> </section>
+        <script>
+            (function () {
+                var parallax = document.querySelectorAll(".parallax")
+                    , speed = 0.5;
+                window.onscroll = function () {
+    [].slice.call(parallax).forEach(function (el, i) {
+                        var windowYOffset = window.pageYOffset
+                            , elPos = "50% " + (-(windowYOffset * speed)) + "px";
+                        el.style.backgroundPosition = elPos;
+                    });
+                };
+            })();
+        </script>
+</body>
+
+</html>
